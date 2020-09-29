@@ -689,7 +689,7 @@ postgresql_custom_init_scripts() {
 #########################
 postgresql_stop() {
     info "Stopping PostgreSQL..."
-    stop_service_using_pid "$POSTGRESQL_PID_FILE"
+    PGDATA="$POSTGRESQL_DATA_DIR" pg_ctl stop 
 }
 
 ########################
